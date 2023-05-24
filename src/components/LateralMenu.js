@@ -1,22 +1,28 @@
 import React from 'react'
 import MenuItem from './menu/MenuItem';
 import TitleItem from './menu/TitleItem';
+import ItemNotification from './menu/ItemNotification';
+import ProfileButton from './menu/ProfileButton';
+import Dropdown from './menu/Dropdown';
 
 const LateralMenu = (props) => {
     const {user} = props;
-  
+    
     return (
-    <div className='flex w-full fixed border-r border-black lg:flex-col lg:w-1/6 lg:relative md:flex-col md:w-20 md:relative bottom-0'>
+    <div className='flex w-full fixed border-r border-gray-200 lg:flex-col lg:w-1/6 lg:relative md:flex-col md:w-20 md:relative bottom-0'>
         <TitleItem />
         <MenuItem icon='home' text='Home' />
-        <MenuItem icon='search' text='Buscar' />
-        <MenuItem icon='explore' text='Explorar' />
+        <MenuItem icon='search' text='Search'/>
+        <MenuItem icon='explore' text='Explore' style='lg:flex md:flex hidden'/>
         <MenuItem icon='movie' text='Reels' />
-        <MenuItem icon='chat' text='Mensajes' />
-        <MenuItem icon='favorite' text='Notificaciones' />
-        <MenuItem icon='add_circle' text='Crear' />
         
-        <div className='lg:block md:block hidden absolute bottom-0 w-full mx-auto my-auto p-2 text-center text-white bg-blue-800'>H</div>
+        <ItemNotification icon='chat' text='Messages' alerts={10}/>
+        <ItemNotification icon='favorite' text='Notifications' alerts={3} style='lg:flex md:flex hidden' />
+        
+        <MenuItem icon='add_circle' text='Create' style='lg:flex md:flex hidden' />
+        <ProfileButton img={user.img} />
+        
+        <Dropdown />
     </div>
   )
 }

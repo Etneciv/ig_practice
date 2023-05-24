@@ -8,7 +8,7 @@ function App() {
   const session={
     name:'Fernando López',
     userName:'nosoyetneciv',
-    img:'',
+    img:'https://landing.derco.com.pe/plataforma/leads_old/assets/pages/media/pages/profile_user.jpg',
   }
 
   return (
