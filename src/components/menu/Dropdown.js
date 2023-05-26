@@ -1,23 +1,25 @@
 import React, { useState } from 'react'
 import ItemDropdwon from './ItemDropdwon';
+import ThemeButton from './ThemeButton';
 
 
-const Dropdown = () => {
-    const [open, setOpen] = useState();
-   
+const Dropdown = (props) => {
+  const {changeTheme, theme} = props;
+  const [open, setOpen] = useState();
+
   return (
     <div className='lg:block md:block hidden absolute bottom-0 w-full mx-auto my-auto p-2 text-center'>
         {open?
-            <div className='fixed bottom-16 w-1/6 rounded-lg bg-white drop-shadow-2xl'>
+            <div className={`fixed bottom-16 w-72 rounded-lg drop-shadow-2xl ${theme.bg_dropdown+theme.text_color}`}>
                 <ItemDropdwon icon='settings' text='Settings' />
                 <ItemDropdwon icon='history' text='Activity' />
                 <ItemDropdwon icon='bookmark' text='Saved' />
-                <ItemDropdwon icon='dark_mode' text='Theme' />
+                <ThemeButton changeTheme={changeTheme} theme={theme}/>
                 <ItemDropdwon icon='report' text='Report a problem' />
-                <hr className='bg-gray-200 h-2 w-full'/>
+                <hr className='bg-gray-200 h-1 w-full'/>
                 <div className='w-full flex flex-col text-left p-2'>
-                  <p className='my-1'>Change account</p>
-                  <p className='my-1'>Logout</p>
+                  <p className='my-3'>Change account</p>
+                  <p className='my-3'>Logout</p>
                 </div>
             </div>
         :null}

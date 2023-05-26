@@ -6,11 +6,11 @@ import ProfileButton from './menu/ProfileButton';
 import Dropdown from './menu/Dropdown';
 
 const LateralMenu = (props) => {
-    const {user} = props;
+    const {user, changeTheme, theme} = props;
     
     return (
     <div className='flex w-full fixed border-r border-gray-200 lg:flex-col lg:w-1/6 lg:relative md:flex-col md:w-20 md:relative bottom-0'>
-        <TitleItem />
+        <TitleItem theme={theme} />
         <MenuItem icon='home' text='Home' />
         <MenuItem icon='search' text='Search'/>
         <MenuItem icon='explore' text='Explore' style='lg:flex md:flex hidden'/>
@@ -22,7 +22,7 @@ const LateralMenu = (props) => {
         <MenuItem icon='add_circle' text='Create' style='lg:flex md:flex hidden' />
         <ProfileButton img={user.img} />
         
-        <Dropdown />
+        <Dropdown changeTheme={changeTheme} theme={theme}/>
     </div>
   )
 }
