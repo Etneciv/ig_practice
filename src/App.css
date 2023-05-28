@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-ig{
+  background: linear-gradient(90deg, rgba(255,241,0,1) 0%, rgba(255,113,0,1) 42%, rgba(255,0,213,1) 100%);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

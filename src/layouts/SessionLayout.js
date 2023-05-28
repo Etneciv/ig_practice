@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import LateralMenu from '../components/LateralMenu';
 import { darkTheme, whiteTheme } from '../utils/theme';
+import StoriesBar from '../components/StoriesBar';
 
 const SessionLayout = (props) => {
     const [theme, setTheme] = useState(darkTheme);
@@ -35,7 +36,9 @@ const SessionLayout = (props) => {
   return (
     <div className={`w-full h-screen flex flex-col lg:flex-row md:flex-row ${theme.bg_color+theme.text_color}`}>
         <LateralMenu user={user} changeTheme={changeTheme} theme={theme}/>
-        <div className='lg:w-3/6 w-full'>content</div>
+        <div className='lg:w-3/6 w-full  mt-5'>
+          <StoriesBar />
+        </div>
         <div className=' lg:w-2/6 lg:block hidden'>details</div>
     </div>
   )

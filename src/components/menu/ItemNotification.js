@@ -10,7 +10,7 @@ const ItemNotification = (props) => {
             <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500 text-xs text-white justify-center">{alerts>9?'9+':alerts}</span>
           </span>:null}
           
-          <p className='lg:block hidden mx-1 text-lg my-auto'>{text}</p>
+          <p className='lg:block hidden mx-1 text-md my-auto'>{text}</p>
       </button>
     )
 }
